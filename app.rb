@@ -3,6 +3,6 @@ require "slim"
 require "sqlite3"
 require "bcrypt"
 
-get(/) do
+get("/") do
     slim(:index)
 end

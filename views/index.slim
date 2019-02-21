@@ -1,1 +1,26 @@
-p Hello world index
+/loggin form
+form action="/user_login" method="POST"
+    input type="text" placeholder="Username" name="username"
+    br
+    input type="text" placeholder="Password" name="password"
+    br
+    input type="submit" value="Login" name="submit_button"
+    input type="submit" value="Create user" name="submit_button"
+
+/post skrivning för användare
+-if session[:logged_in] == true
+    form action="/placeholder" method="POST"
+        input type="text" placeholder="txt" name="txt"
+    /fix placeholder och 2 st txt
+    input type="" value="" name=""
+    /fix       /\ next lesson
+        
+
+    /p hello true world
+
+/ p "#{session[:logged_in]}"
+
+-locals[:post].each do |element|
+    article 
+        -if element != 0
+            p #{element["PostText"]}

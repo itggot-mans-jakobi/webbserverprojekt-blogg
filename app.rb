@@ -15,6 +15,10 @@ get("/") do
         post: result})
 end
 
+get("/user") do
+    slim(:user)
+end
+
 post("/user_login") do
     username = params["username"]
     password = params["password"]
@@ -28,6 +32,9 @@ post("/user_login") do
         result_password = db.execute("SELECT Password FROM users where Username = 'username'")
         if hashat_password == result_password[0][0]
             session[:logged_in] = true
+            session[:user] = username
+            
+            redirect("/")
         end
     end
 
@@ -36,4 +43,8 @@ post("/user_login") do
     end
 
     redirect("/")
+end
+
+post("/post_new") do
+
 end

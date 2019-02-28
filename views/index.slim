@@ -9,14 +9,17 @@ form action="/user_login" method="POST"
 
 /post skrivning för användare
 -if session[:logged_in] == true
-    form action="/placeholder" method="POST"
-        input type="text" placeholder="txt" name="txt"
+    br
+    p welcome back #{session[:user]}
+    form action="/user" method="get"
+        input type="submit" value="user page"
+    form action="/post_new" method="POST"
+        textarea name="post_text" cols="30" rows="5" You better start typing... 
+        input type="submit" value="txt" name="txt"
+    
     /fix placeholder och 2 st txt
-    input type="" value="" name=""
     /fix       /\ next lesson
         
-
-    /p hello true world
 
 / p "#{session[:logged_in]}"
 

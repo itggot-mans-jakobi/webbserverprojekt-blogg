@@ -1,2 +1,15 @@
 
 p #{session[:user]}'s userpage
+
+/post skrivning för användare
+-if session[:logged_in] == true
+    br
+    p welcome back #{session[:user]}
+    form action="/user" method="get"
+        input type="submit" value="user page"
+    form action="/post_new" method="POST"
+        textarea name="post_text" cols="30" rows="5" You better start typing... 
+        input type="submit" value="txt" name="txt"
+    
+    /fix placeholder och 2 st txt
+    /fix       /\ next lesson

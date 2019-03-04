@@ -45,6 +45,12 @@ post("/user_login") do
     redirect("/")
 end
 
+
+post("/user_logout") do
+    session[:logged_in] = false
+    redirect("/")
+end
+
 post("/post_new") do
 
 end

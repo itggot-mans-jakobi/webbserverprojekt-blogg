@@ -1,0 +1,19 @@
+p #{session[:user]}'s userpage
+
+/post skrivning för användare
+-if session[:logged_in] == true
+    br
+    p welcome back #{session[:user]}
+    form action="/post_new" method="POST"
+        textarea name="post_text" cols="30" rows="5" placeholder="You better start typing..."
+        br
+        input type="submit" value="Post it" name="submit"
+
+P All posts:
+/ -locals[:post].each do |element|
+/     article 
+/         -if element != 0
+/             -if element["Username"] == session[:user]
+/                 p Made by #{element["Username"]}
+/                 p #{element["PostText"]}
+/                 br

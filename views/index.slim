@@ -17,9 +17,12 @@
 
 
 / p "#{session[:logged_in]}"
-
-P Posts:
+br
+P All posts:
 -locals[:post].each do |element|
     article 
         -if element != 0
+            p Made by #{element["Username"]}
             p #{element["PostText"]}
+            br
+

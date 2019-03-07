@@ -26,7 +26,17 @@ get("/:user") do
         post: result,
         username_viev: params["user"]
     })
-   
+end
+
+get("/:user/edit") do
+    db = SQLite3::Database.new("db/database.db")
+    db.results_as_hash = true
+
+    result = db.execute("SELECT PostId, PostText, Username FROM posts")
+
+    slim(:userpage, locals:{
+        post: result
+    })
 end
 
 post("/user_login") do

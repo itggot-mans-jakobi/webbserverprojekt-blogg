@@ -1,6 +1,10 @@
 p #{session[:user]}'s userpage
 
 /post skrivning för användare
+
+-if session[:user] == locals[:username_viev]
+        / - show a edit button
+
 -if session[:logged_in] == true
     br
     p welcome back #{session[:user]}
